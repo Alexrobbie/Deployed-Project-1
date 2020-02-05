@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="assets/style.css" >
     <script type="text/javascript" src="assets/script.js"></script>
     <style>
      
@@ -23,15 +23,16 @@
       </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Restaurants Near Me</h1>
-    <label>Food Category: 
-        <select name="wgtmsr" id="wgtmsr" style="width: 250px;">
+    <h1 style="text-align: center;">Quick Restaurant Finder</h1>
+    <label class=row>Food Category: 
+      
+        <select class="food colums"  name="wgtmsr" id="wgtmsr" style="width: 250px;">
           <option value="">Any cuisine</option>
           <option value="american">American</option>
           <option value="Barbecue">Barbecue</option>
           <option value="Chinese">Chinese</option>
           <option value="French">French</option>
-          <option value="Hamburger">Hamburger</option>
+          <option  value="Hamburger">Hamburger</option>
           <option value="Indian">Indian</option>
           <option value="Italian">Italian</option>
           <option value="Japanese">Japanese</option>
@@ -43,15 +44,33 @@
           <option value="Thai">Thai</option>
         
         </select>
+        <button type="button" class="hollow success button colums" onclick="search()">Search</button>
       </label>
       
-      <button type="button" class="success button" onclick="search()">Search</button>
-    <button type="button" class="alert button">Clear</button>
-    <div id="map"></div>
-    <div id=place0></div>
-    <div id=place1></div>
-    <div id=place2></div>
-    <div id=place3></div>
+      
+    
+   <div id="map"></div>
+   <div id=food></div>
+   <div class="card">
+    <div class="card-section">
+        <div id=place0></div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-section">
+        <div id=place1></div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-section">
+        <div id=place2></div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-section">
+        <div id=place3></div>
+    </div>
+</div>
 </body>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7efQS-wKsXAHzNmjQllTVz7RN3ycoJxQ&callback=initMap&libraries=places"></script>
 </html>

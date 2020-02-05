@@ -1,0 +1,18 @@
+#food{
+background-repeat: no-repeat;
+width: 250px;
+float:right;
+height: 250px;
+}
+.button{
+    position: absolute;
+    top: 75px;
+    padding-bottom: 10px;
+    height: 45px;
+}
+select{
+    height: 45px;
+}
+#map{
+    right: -75px;
+}
