@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant Searcher</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+    
+    <script type="text/javascript" src="assets/script.js"></script>
+    <style>
+     
+      #map {
+        height: 300px;
+        width: 300px;
+             }
+      body{
+        position: absolute;
+        right:35%
+      }
+      </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Restaurants Near Me</h1>
+    <label>Food Category: 
+        <select name="wgtmsr" id="wgtmsr" style="width: 250px;">
+          <option value="">Any cuisine</option>
+          <option value="american">American</option>
+          <option value="Barbecue">Barbecue</option>
+          <option value="Chinese">Chinese</option>
+          <option value="French">French</option>
+          <option value="Hamburger">Hamburger</option>
+          <option value="Indian">Indian</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Mexican">Mexican</option>
+          <option value="Pizza">Pizza</option>
+          <option value="Seafood">Seafood</option>
+          <option value="Steak">Steak</option>
+          <option value="Sushi">Sushi</option>
+          <option value="Thai">Thai</option>
+        
+        </select>
+      </label>
+      
+      <button type="button" class="success button" onclick="search()">Search</button>
+    <button type="button" class="alert button">Clear</button>
+    <div id="map"></div>
+    <div id=place0></div>
+    <div id=place1></div>
+    <div id=place2></div>
+    <div id=place3></div>
+</body>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7efQS-wKsXAHzNmjQllTVz7RN3ycoJxQ&callback=initMap&libraries=places"></script>
+</html>
