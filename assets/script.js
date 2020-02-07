@@ -4,6 +4,9 @@ var infowindow;
 var me;
 var lat;
 var long;
+var marker;
+var counter=0;
+var marker=[];
 function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
@@ -89,7 +92,12 @@ $("#food").css('background-image','url('+food+')');
 
 }
 function callback(results, status) {
+
   if (status == google.maps.places.PlacesServiceStatus.OK) {
+    if (counter!=0){
+      clearmarkers();
+    }
+    counter++;
     for (var i = 0; i < 4; i++) {
       var place = results[i];
       console.log(results[i]);
@@ -99,7 +107,17 @@ function callback(results, status) {
       console.log(ResAdr);
       var ResRate= results[i].rating;
       var resPrice = results[i].price_level;
+      var lt=results[i].geometry.location.lat();
+      var lg=results[i].geometry.location.lng();
+      me = new google.maps.LatLng(lt,lg);
       
+      var mark = new google.maps.Marker({
+        position: me,
+      title: ResName });
+     marker.push(mark);
+        marker[i].setMap(map);
+
+
       if (resPrice == 1){
         resPrice="$";
       }
@@ -135,3 +153,13 @@ function callback(results, status) {
   }
 }
 getLocation();
+
+
+function clearmarkers() {
+  marker[0].setMap(null);
+  marker[1].setMap(null);
+  marker[2].setMap(null);
+  marker[3].setMap(null);
+  marker=[]
+  console.log("Here");
+}
