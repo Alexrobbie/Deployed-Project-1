@@ -43,7 +43,7 @@ function search(){
       service.textSearch(request, callback);
 
       var selectedFood = $("select.food").children("option:selected").text();
-    console.log(selectedFood);
+    
     if(selectedFood=="Hamburger") {
       var food="assets/burger.jfif";
     }
@@ -100,11 +100,11 @@ function callback(results, status) {
     counter++;
     for (var i = 0; i < 4; i++) {
       var place = results[i];
-      console.log(results[i]);
+      ;
       var ResName=results[i].name;
-      console.log(ResName);
+      
       var ResAdr=results[i].formatted_address;
-      console.log(ResAdr);
+      
       var ResRate= results[i].rating;
       var resPrice = results[i].price_level;
       var lt=results[i].geometry.location.lat();
@@ -161,5 +161,5 @@ function clearmarkers() {
   marker[2].setMap(null);
   marker[3].setMap(null);
   marker=[]
-  console.log("Here");
+  
 }
